@@ -1,111 +1,126 @@
-# CarParking-University
+# CarRental-University
 
-A modular Java application developed as a university project to simulate the core components of a car parking management system. This project follows **Object-Oriented Design (OOD)** principles and leverages well-known **software design patterns** to ensure modularity, scalability, and maintainability.
+A modular, object-oriented **Car Rental System** built in Java with Swing GUI, implementing advanced software architecture and design patterns. Developed as part of a second-year Software Engineering course, the system demonstrates real-world engineering practices using Java SE.
 
 ---
 
 ## Overview
 
-The `CarParking-University` system provides the foundation for managing user roles and basic vehicle entities. While minimal in features by design, it establishes a solid structure to build a fully functional car parking system by integrating user authentication, vehicle management, and admin control panels.
+This project simulates a real-world **Car Rental Management System** with separate roles for customers and administrators. It includes features such as:
+
+- Vehicle browsing and filtering
+- Customer registration and login with verification
+- Reservation and dynamic pricing logic
+- Admin dashboard for managing cars and users
+- Integrated design patterns for scalable, maintainable architecture
+
+The graphical user interface is built using **Java Swing**, and the backend logic is structured with **OOP principles** and **software design patterns** for flexibility and reusability.
 
 ---
 
-## Technologies Used
+## Technologies & Tools
 
-* **Language**: Java
-* **Architecture**: Modular OOP
-* **Design Patterns**:
-
-  * Factory Pattern
-  * Proxy Pattern (scaffolded)
+- **Language:** Java SE 17  
+- **GUI:** Swing  
+- **IDE:** IntelliJ IDEA / Eclipse  
+- **Version Control:** Git, GitHub  
+- **Design Methodology:** Agile (Scrum)  
+- **Design Tools:** PlantUML, draw.io (for UML Diagrams)
 
 ---
 
-## Project Structure
+## Key Features
 
-```plaintext
-CarParking-University/
+| Module              | Description |
+|---------------------|-------------|
+| Vehicle Listing   | Display and iterate through available cars |
+| Authentication    | Login, register, and role-based access control |
+| Reservation       | Create rental bookings with custom pricing |
+| Admin Panel       | Add/edit/remove vehicles, view bookings |
+| Logs              | System logging and audit trails |
+| GUI               | Desktop interface using Java Swing |
+
+---
+
+## Applied Design Patterns
+
+| Pattern      | Application |
+|--------------|-------------|
+| **Factory**  | Dynamically instantiate user roles (Admin, Customer) |
+| **Proxy**    | Control access to admin-only features |
+| **Observer** | Trigger events like SMS verification or logging |
+| **Builder**  | Flexible reservation object creation |
+| **Decorator**| Add optional services (insurance, GPS) to car |
+| **Iterator** | Navigate car listings |
+| **Strategy** | Apply different pricing models (weekend/weekday) |
+| **Visitor**  | Perform logging and inspection without changing object structure |
+| **Bridge**   | Abstract payment gateways (Stripe/PayPal) – for future integration |
+
+---
+
+## Agile Development Process
+
+We followed **Scrum** methodology throughout the development process.
+
+### Sprint Structure
+
+| Sprint | Focus Area |
+|--------|------------|
+| Sprint 1 | Vehicle listing module + Iterator pattern |
+| Sprint 2 | SMS Verification + Observer pattern |
+| Sprint 3 | Reservation & Pricing + Strategy/Builder patterns |
+| Sprint 4 | Admin Control Panel + Factory/Proxy patterns |
+| Sprint 5 | Logs & Audits + Visitor pattern |
+| Sprint 6 | Code review, testing, and final deployment |
+
+---
+
+## Testing
+
+- **Unit Testing:** Reservation, pricing logic  
+- **Manual Testing:** GUI features, user roles  
+- **Integration Testing:** Login → Reserve → Admin workflows  
+- **Code Quality:** Applied SOLID principles, encapsulation, and design patterns  
+
+---
+
+## Folder Structure
+
+```
+
+CarRental-University/
 ├── src/
-│   ├── Main.java                     # Application entry point
-│   ├── Entity/
-│   │   ├── Customer.java             # Customer-specific implementation
-│   │   ├── Admin/
-│   │   │   ├── Admin.java            # Admin-specific implementation
-│   │   │   └── Panel/
-│   │   │       ├── AdminPanel.java         # Admin panel interface
-│   │   │       ├── AdminPanelProxy.java    # Proxy class for admin access
-│   │   │       └── RealAdminPanel.java     # Actual admin panel (unimplemented)
-│   │   └── User/
-│   │       ├── User.java             # Abstract base class for users
-│   │       └── UserFactory.java      # Factory pattern implementation
-│   └── Vehcile/
-│       └── Vehcile.java              # Vehicle entity (typo noted)
-└── CarParking.iml
-```
+│   ├── models/
+│   ├── gui/
+│   ├── controllers/
+│   ├── patterns/
+│   ├── main/
+├── diagrams/
+├── screenshots/
+└── README.md
+
+````
 
 ---
 
-## Features
+## How to Run
 
-* **User Abstraction**: Abstract `User` class provides a shared interface for role-specific subclasses.
-* **Factory Pattern**: `UserFactory` dynamically instantiates users based on their role (`Admin`, `Customer`).
-* **Proxy Pattern (Planned)**: `AdminPanelProxy` designed to manage secure access to admin operations.
-* **Encapsulation**: Private attributes with public getter/setter methods for safe data handling.
-* **Extensibility**: Designed to allow integration of parking slots, billing, time tracking, and databases.
+1. Clone the repository  
+```bash
+git clone https://github.com/AboudEy96/CarParking-University.git
+````
 
----
+2. Open with your preferred Java IDE (IntelliJ/Eclipse)
 
-## Getting Started
+3. Run `Main.java` from the `main` package
 
-### Requirements
-
-* Java SDK 17 or later
-* IDE such as IntelliJ IDEA or Eclipse
-
-### Steps
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/AboudEy96/CarParking-University.git
-   cd CarParking-University
-   ```
-
-2. Open the project in your IDE.
-
-3. Run `Main.java` to execute the sample scenario.
+4. Interact via the Java Swing GUI
 
 ---
 
-## Design Patterns In Detail
-
-### Factory Pattern
-
-Implemented via `UserFactory`, this pattern decouples user object creation from the client code.
-
-```java
-User admin = UserFactory.createUser("Admin");
-```
-
-### Proxy Pattern (Planned)
-
-`AdminPanelProxy` is scaffolded to intercept and control access to `RealAdminPanel`. This is useful in scenarios like permission validation or resource control. **Implementation pending.**
-
----
-
-## Future Enhancements
-
-* Implement full functionality of the admin control panel using the Proxy pattern.
-* Add vehicle registration and parking logic.
-* Extend GUI support using JavaFX or Swing.
-* Improve exception handling and input validation.
-
----
-
-## Author
+## Contact
 
 * **Abdulkadir** [GitHub](https://github.com/AboudEy96/) • [Twitter](https://x.com/AboudEy96)
  
 * **Moustafa Mohamed**
 [LinkedIn](https://www.linkedin.com/in/moustafamohamed01/) • [GitHub](https://github.com/MoustafaMohamed01) • [Kaggle](https://www.kaggle.com/moustafamohamed01)
-

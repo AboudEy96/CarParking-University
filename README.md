@@ -90,11 +90,15 @@ We followed **Scrum** methodology throughout the development process.
 
 CarRental-University/
 ├── src/
-│   ├── models/
-│   ├── gui/
-│   ├── controllers/
-│   ├── patterns/
-│   ├── main/
+│   ├── Entity/
+│   ├── Notifactions/
+│   ├── Payment/
+│   ├── UserInterface/
+│   ├── Vehcile/
+│   ├── main.java/
+├── .idea/
+├── .gitignore
+├── CarParking.iml
 ├── diagrams/
 ├── screenshots/
 └── README.md
